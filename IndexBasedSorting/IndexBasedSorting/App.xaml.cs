@@ -1,9 +1,7 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
-
-namespace IndexBasedSorting
+﻿namespace IndexBasedSorting
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
