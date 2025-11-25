@@ -1,15 +1,15 @@
 ﻿namespace IndexBasedSorting
 {
-    using Syncfusion.SfSkinManager;
-    using Syncfusion.UI.Xaml.Kanban;
-    using Syncfusion.Windows.Tools.Controls;
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.Linq;
     using System.Reflection;
     using System.Windows;
-
+    using Syncfusion.SfSkinManager;
+    using Syncfusion.UI.Xaml.Kanban;
+    using Syncfusion.Windows.Tools.Controls;
+    
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -40,9 +40,9 @@
             this.selectedCard = new KanbanCardItem();
             this.sortOrderComboBox.ItemsSource = new ObservableCollection<string>() { "Ascending", "Descending" };
             this.sortOrderComboBox.SelectedIndex = 0;
-            this.sortOrderComboBox.SelectionChanged += OnSortOrderComboBoxSelectionChanged;
-            this.kanban.CardDragStart += OnKanbanCardDragStart;
-            this.kanban.CardDragEnd += OnKanbanCardDragEnd;
+            this.sortOrderComboBox.SelectionChanged += this.OnSortOrderComboBoxSelectionChanged;
+            this.kanban.CardDragStart += this.OnKanbanCardDragStart;
+            this.kanban.CardDragEnd += this.OnKanbanCardDragEnd;
 
             SfSkinManager.SetTheme(this, new Theme("Material3Light"));
         }
