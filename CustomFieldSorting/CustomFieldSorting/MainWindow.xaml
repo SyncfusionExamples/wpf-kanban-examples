@@ -54,8 +54,6 @@
         <kanban:SfKanban x:Name="kanban" 
                          SortingMappingPath="Priority"
                          Grid.Row="1"
-                         Height="500"
-                         VerticalAlignment="Top"
                          SortingOrder="Ascending"
                          ItemsSource="{Binding Cards}"
                          ColumnMappingPath="Category">
@@ -76,7 +74,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Row="0" 
-                                        Margin="8,0,0,0"
+                                        Margin="8,8,0,0"
                                         Grid.ColumnSpan="2" 
                                         Orientation="Horizontal"
                                         VerticalAlignment="Center" 
