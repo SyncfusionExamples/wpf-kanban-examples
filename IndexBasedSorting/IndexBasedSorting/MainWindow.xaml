@@ -1,0 +1,104 @@
+﻿<Window x:Class="IndexBasedSorting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IndexBasedSorting"
+        xmlns:kanban="clr-namespace:Syncfusion.UI.Xaml.Kanban;assembly=Syncfusion.SfKanban.WPF"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.85*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Margin="10">
+            <TextBlock Text="Sort direction:"
+                       FontWeight="SemiBold"
+                       FontSize="13"
+                       VerticalAlignment="Center"/>
+            <syncfusion:ComboBoxAdv x:Name="sortOrderComboBox"
+                                    Margin="10,0,0,0"
+                                    SelectedIndex="0"
+                                    Height="25"
+                                    FontSize="13"
+                                    Width="200"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center">
+            </syncfusion:ComboBoxAdv>
+        </StackPanel>
+        
+        <kanban:SfKanban x:Name="kanban" 
+                         Grid.Row="1"
+                         SortingMappingPath="Index"
+                         SortingOrder="Ascending"
+                         ItemsSource="{Binding Cards}"
+                         ColumnMappingPath="Category">
+            <kanban:SfKanban.CardTemplate>
+                <DataTemplate>
+                    <Border Background="#F3EADC" 
+                            BorderBrush="Black" 
+                            BorderThickness="1" 
+                            CornerRadius="8" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Row="0" 
+                                        Grid.ColumnSpan="2" 
+                                        Margin="0,2,8,0"
+                                        Orientation="Horizontal"
+                                        VerticalAlignment="Center" 
+                                        HorizontalAlignment="Right" >
+                                <TextBlock Text="Rank #" 
+                                           FontSize="14" 
+                                           FontWeight="Bold" 
+                                           Foreground="#026B6E"
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding Index}" 
+                                           FontSize="14" 
+                                           FontWeight="Bold" 
+                                           Foreground="#026B6E"
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center"  />
+                            </StackPanel>
+                            <TextBlock Grid.Row="1" 
+                                       Grid.ColumnSpan="2" 
+                                       Text="{Binding Title}" 
+                                       FontWeight="Bold"
+                                       FontSize="14" 
+                                       HorizontalAlignment="Center" 
+                                       VerticalAlignment="Center" 
+                                       Margin="5" />
+                            <TextBlock  Grid.Row="2" 
+                                        Grid.ColumnSpan="2" 
+                                        Text="{Binding Description}"
+                                        FontSize="12"
+                                        TextWrapping="Wrap"  
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        Margin="5" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </kanban:SfKanban.CardTemplate>
+            <kanban:KanbanColumn Title="Open" Categories="Open"/>
+            <kanban:KanbanColumn Title="In Progress" Categories="In Progress"/>
+            <kanban:KanbanColumn Title="Done" AllowDrag="False" Categories="Done"/>
+            <kanban:SfKanban.DataContext>
+                <local:KanbanViewModel/>
+            </kanban:SfKanban.DataContext>
+        </kanban:SfKanban>
+    </Grid>
+</Window>
