@@ -1,12 +1,12 @@
 ﻿namespace CustomFieldSorting
 {
-    using Syncfusion.SfSkinManager;
-    using Syncfusion.UI.Xaml.Kanban;
-    using Syncfusion.Windows.Tools.Controls;
     using System;
     using System.Collections.ObjectModel;
     using System.Windows;
     using System.Windows.Controls;
+    using Syncfusion.SfSkinManager;
+    using Syncfusion.UI.Xaml.Kanban;
+    using Syncfusion.Windows.Tools.Controls;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,11 +23,11 @@
             InitializeComponent();
             this.sortOrderCombobox.ItemsSource = new ObservableCollection<string>() { "Ascending", "Descending" };
             this.sortOrderCombobox.SelectedIndex = 0;
-            this.sortOrderCombobox.SelectionChanged += OnSortOrderSelectionChanged; ;
+            this.sortOrderCombobox.SelectionChanged += this.OnSortOrderSelectionChanged; ;
             this.mappingPathCombobox.ItemsSource = new ObservableCollection<string>() { "Title", "Priority" };
             this.mappingPathCombobox.SelectedIndex = 0;
             this.mappingPathCombobox.SelectionChanged += OnMappingPathSelectionChanged;
-            this.kanban.CardDragEnd += OnKanbanCardDragEnd;
+            this.kanban.CardDragEnd += this.OnKanbanCardDragEnd;
 
             SfSkinManager.SetTheme(this, new Theme("Material3Light"));
         }

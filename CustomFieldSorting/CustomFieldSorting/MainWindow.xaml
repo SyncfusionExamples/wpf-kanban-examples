@@ -64,8 +64,7 @@
                     <Border Background="#F3CFCE" 
                             BorderBrush="Black" 
                             BorderThickness="1" 
-                            CornerRadius="8" 
-                            Padding="8">
+                            CornerRadius="8" >
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
@@ -77,6 +76,7 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Row="0" 
+                                        Margin="8,0,0,0"
                                         Grid.ColumnSpan="2" 
                                         Orientation="Horizontal"
                                         VerticalAlignment="Center" 
@@ -119,9 +119,6 @@
             <kanban:KanbanColumn Title="Open" Categories="Open"/>
             <kanban:KanbanColumn Title="In Progress" Categories="In Progress"/>
             <kanban:KanbanColumn Title="Done" AllowDrag="False" Categories="Done"/>
-            <kanban:SfKanban.DataContext>
-                <local:KanbanViewModel/>
-            </kanban:SfKanban.DataContext>
         </kanban:SfKanban>
     </Grid>
 </Window>
