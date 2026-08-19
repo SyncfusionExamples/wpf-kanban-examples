@@ -1,37 +1,36 @@
-# WPF Kanban Sorting
+# wpf-kanban-examples
 
-This sample demonstrates how to sort cards in the **Syncfusion WPF Kanban** control using different sorting approaches. The application showcases both **Custom Field Sorting** and **Index-Based Sorting**, enabling flexible card organization and drag-and-drop reordering scenarios.
+This repository contains different samples demonstrating about [WPF SfKanban](https://help.syncfusion.com/wpf/kanban-board/sorting) control.
 
-## Features Demonstrated
+## Syncfusion controls:
 
-### Custom Field Sorting
-- Sorts Kanban cards using a custom data model property such as Priority, Due Date, or Status.
-- Uses the `SortingMappingPath` property to map the sorting field.
-- Supports both ascending and descending sorting orders.
-- Automatically rearranges cards based on the configured field value.
+This project used the following Syncfusion control(s):
+* [SfKanban](https://www.syncfusion.com/gantt-sdk/wpf-kanban-board)
 
-### Index-Based Sorting
-- Sorts cards using a dedicated numeric `Index` field.
-- Allows cards to be dropped at specific positions within a Kanban column.
-- Updates index values dynamically after drag-and-drop operations.
-- Preserves user-defined card ordering across columns.
+## Requirements to run the sample
 
-### Drag-and-Drop Reordering
-- Supports moving cards within a column or across columns.
-- Updates sorting information when cards are repositioned.
-- Refreshes the target column to reflect the latest card order.
+Refer to the following link for more details - [System Requirements](https://help.syncfusion.com/wpf/system-requirements)
 
-### Sorting Order Support
-- Supports both ascending and descending sorting modes.
-- Dynamically updates the card arrangement based on the selected sorting order.
-- Provides a consistent card sequence across Kanban columns.
+## How to run the sample
 
-### Data-Driven Card Organization
-- Uses business object properties to control card placement.
-- Supports workflow management, task prioritization, and custom ranking scenarios.
-- Demonstrates flexible sorting configurations for real-world Kanban applications.
+1. Clone the sample and open it in Visual Studio.
 
+   *Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
 
-## Documentation Reference
+2. Register your license key in the Program.cs file as demonstrated in the following code.
 
-[WPF Kanban Sorting](https://help.syncfusion.com/wpf/kanban-board/sorting)
+    public partial class App : Application
+    {
+      //Register Syncfusion license
+			Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("YOUR LICENSE KEY");
+    }
+		
+	Refer to this [link](https://help.syncfusion.com/wpf/licensing/overview) for more details.
+
+3. Clean and build the application.
+
+4. Run the application.
+
+## License
+
+Syncfusion has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion’s samples. 
